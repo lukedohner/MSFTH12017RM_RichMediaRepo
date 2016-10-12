@@ -1,0 +1,591 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/css3/transform";
+
+@import "compass/utilities/sprites";
+
+
+
+//@import "elements/*.png";
+//@include all-elements-sprites;
+
+//@import "fullscreen/*.png";
+//@include all-fullscreen-sprites;
+
+
+$bg-url-elem:"../img/elements-s163f629a19.png";
+
+$bg-url-full:"../img/fullscreen-s351b223968.png";
+
+// set up variables
+$width: 970px;
+$height: 250px;
+
+// set all elements to be box-sizing: border box to include any border, padding and content, but not margin.
+*, :before, :after {
+	@include box-sizing(border-box);
+}
+
+// 100% width and height elements that can be positioned easily absolutely
+.abs-pos {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: $width;
+	height: $height; 
+	overflow: hidden;
+}
+
+#wrapper {
+	@extend .abs-pos;
+	position: relative;	
+	visibility: hidden; 
+
+	&.show {
+		visibility: visible;
+	}
+}
+
+
+#f1-copy1 {
+	@extend .abs-pos;
+	background-image:url($bg-url-full);
+	background-position: 0 -500px; 
+}
+	
+
+#f4-copy1 {
+	@extend .abs-pos;
+	background-image:url($bg-url-full);
+	background-position: 0 -750px;; 
+	
+}
+
+#click_through {
+	@extend .abs-pos;
+	//z-index: 999;
+	cursor: pointer;
+	background-color: rgba(255,255,255,0);
+	//border: 1px solid #000000;
+}
+
+
+#logo {
+	position: absolute;
+	width: 108px;
+	height: 20px;
+	left:20px;
+	top:210px;
+
+	//opacity: 1;
+	//background: url("../../../img/WINDOWS10_LOGO_WHITE.png") no-repeat; 
+
+}
+
+
+.activeLogo{
+	background: url("../../../img/WINDOWS10_LOGO_WHITE.png") no-repeat; 
+}
+
+#logo-blue {
+	position:absolute;
+	width:94px;
+	height:17px;
+	left:15px;
+	top:219px;
+	//background-image:url('../img/WINDOWS10_LOGO_BLUE.png');
+	background-image:url($bg-url-elem);
+	background-position: 0 -61px;
+}
+
+#logo-end{
+	position:absolute;
+	width:91px;
+	height:19px;
+	left:20px;
+	top:210px;
+	//background-image:url('../img/MSFT_logo_c_C-Gray_D.png');
+	background-image:url($bg-url-elem);
+	background-position: 0 -16px;
+} 
+
+#carat {
+	position:absolute;
+	width:6px;
+	height:11px;
+	opacity:0;
+	//background-image:url('../img/carat.png');
+	background-image:url($bg-url-elem);
+	background-position: 0 -81px;
+	z-index:1004;
+}
+
+#invisi-hotspot {
+	
+}
+
+.active{
+		position:absolute;
+		width:200px;
+		height:40px;
+		left:82px;
+		top:148px;
+		opacity:.5;
+		cursor:pointer;
+		z-index:1001;
+}
+
+.inactive{
+	left:-70%; 
+}
+
+
+
+
+#copy {
+    position: absolute;
+    opacity: 0;
+    
+    left: 50%;
+    top: 55%;
+    width: 100%;
+
+    p {
+      @include transform(
+        translate( -50%, -50% )
+      );
+      text-align: center;
+      width: 100%;
+    }
+}
+
+#cta {
+	position: relative;
+	opacity: 0;
+
+	left: 50%;
+	top: 85%;
+
+	h6 {
+	  display: block;
+	  
+	  @include transform(
+	    translate( -50%, -50% )
+	  );
+
+	  width: 100px;
+	  height: 25px;
+	  padding-top: 5px;
+	  background-color: #f47b23;    
+	  color: #ffffff;
+	  
+	  font-family: arial;
+	  font-size: 12px;
+	  font-weight: bold;
+
+	  line-height: 140%;
+	  
+	  text-align: center;
+    }
+}
+
+#btn-replay {
+	position:absolute;
+	left:926px;
+	top:21px;
+	width:22px;
+	height:26px;
+	//background-image:url('../img/REPLAY_BUTTON.png');
+	cursor:pointer;
+	background-image:url($bg-url-elem);
+	background-position: 0 -35px;
+	z-index:1002;
+
+}
+
+#bg-big-holder {
+	position:absolute;
+}
+
+
+#screen_1 {
+	position:absolute;
+	left:645px;
+	top:22px;
+	width:252px;	
+	height:auto;
+	//background-image:url($bg-url-elem);
+	//background-position: 0 -900px; 
+}
+
+
+#bg-big {
+	position:absolute;
+	width:970px;
+	height:250px;
+	overflow:hidden;
+}
+
+#bg-big-left {
+	position:absolute;
+	width:486px;
+	height:250px;
+	left:0px;
+	//background:url("../img/big_left.jpg");
+	
+}
+
+#bg-big-right {
+	position:absolute;
+	width:484px;
+	height:250px;
+	left:486px;
+	display:inline;
+	//background-image:url($bg-url-elem);
+	//background-position: 0 -81px; 
+}
+
+#menu {
+
+	@extend .abs-pos;
+	background-image:url("../img/bg4.jpg");
+
+
+}
+
+#menu-bg {
+	@extend .abs-pos;
+
+}
+
+.hotspot {
+	position:absolute;
+	z-index:1000;
+}
+
+#hotspot1 {
+	position:absolute;
+	top:167px;
+	left:283px;
+}
+
+#hotspot2 {
+	position:absolute;
+	top:129px;
+	left:494px;
+}
+
+#hotspot3 {
+	position:absolute;
+	top:167px;
+	left:705px;
+}
+
+#hotspot-copy1 {
+	@extend .abs-pos;
+	background-image:url($bg-url-full);
+	background-position: 0 -1000px; 
+
+}
+#hotspot-copy2 {
+	@extend .abs-pos;
+	background-image:url($bg-url-full);
+	background-position: 0 -1250px; 
+}	
+
+#hotspot-copy3 {
+	@extend .abs-pos;
+	background-image:url($bg-url-full);
+	background-position: 0 -1500px; 
+}
+
+#cta-hotspot{	
+	@extend .abs-pos;
+	border: 1px solid #000000;
+
+}
+
+#kspHolder {
+	@extend .abs-pos;
+
+}
+
+#back-button {
+	position:absolute; 
+	top:20px;
+	left:20px;	
+	width:23px;
+	height:16px;
+	//background-image:url('../img/BACK_button.png');
+	background-image:url($bg-url-elem);
+	background-position: 0 0; 
+	cursor:pointer;
+	z-index:1010;
+}
+
+
+#ksp1 {
+	
+	@extend .abs-pos;
+
+	background-color:#eee;
+	.copy-line {
+		@extend .abs-pos;
+		//background-image:url('../img/f5-copy1.png');
+		background-image:url($bg-url-full);
+		background-position: 0 -1750px;; 
+	}
+	.copy-next{
+		@extend .abs-pos;
+		background-image:url($bg-url-full);
+		background-position: 0 0;
+		//background-image:url('../img/copy_versatility.png');
+
+	}
+	.copy-alt{
+		@extend .abs-pos;
+		opacity:0;
+		//background-image:url('../img/copy_offer.png');
+		background-image:url($bg-url-full);
+		background-position: 0 -250px; 
+	}
+
+
+	.product {
+		@extend .abs-pos;
+		//background-image:url('../img/product_laptop.png');
+		background-image:url($bg-url-full);
+		background-position: 0 -2750px;
+	}
+
+}
+
+#ksp2 {
+
+	@extend .abs-pos;
+	
+	background-color:#eee;
+	.copy-line {
+		@extend .abs-pos;
+		//background-image:url('../img/f6-copy1.png');
+		background-image:url($bg-url-full);
+		background-position: 0 -2000px;
+	}
+	.copy-next{
+		@extend .abs-pos;
+		background-image:url($bg-url-full);
+		background-position: 0 0; 
+		//background-image:url('../img/f6-copy2.png');
+	}
+	.copy-alt{
+		@extend .abs-pos;
+		opacity:0;
+		//background-image:url('../img/copy_offer.png');
+		background-image:url($bg-url-full);
+		background-position: 0 -250px; 
+	}
+	
+		.product {
+		@extend .abs-pos;
+		//background-image:url('../img/product_tent.png');
+		background-image:url($bg-url-full);
+		background-position: 0 -3250px;
+	}
+
+}
+
+#ksp3 {
+
+	@extend .abs-pos;
+
+	background-color:#eee;
+	.copy-line {
+		@extend .abs-pos;
+		//background-image:url('../img/f7-copy1.png');
+		background-image:url($bg-url-full);
+		background-position: 0 -2250px; 
+	}
+	.copy-next{
+		@extend .abs-pos;
+		background-image:url($bg-url-full);
+		background-position: 0 0; 
+		//background-image:url('../img/f7-copy2.png');
+
+	}
+	.copy-alt{
+		@extend .abs-pos;
+		opacity:0;
+		//background-image:url('../img/copy_offer.png');
+		background-image:url($bg-url-full);
+		background-position: 0 -250px; 
+	}
+
+
+	.product {
+		@extend .abs-pos;
+		//background-image:url('../img/product_tablet.png');
+		background-image:url($bg-url-full);
+		background-position: 0 -3000px; 
+	}
+}
+
+ #learnMore { 
+    width: 92px; 
+    height: 27px; 
+    background-color: #0175da; 
+    position: absolute; 
+    overflow: hidden; 
+    left:45px;
+    top:138px;
+  }
+
+   #learnMore1 { 
+   margin:0;
+   padding:0;
+    position: relative; 
+   // background-image:url($bg-url-elem);
+    //background-position: 0 -873px;
+
+  }
+
+    #learnMore2 {
+     margin:0;
+   	padding:0; 
+    position: relative; 
+    //background-image:url($bg-url-elem);
+    //background-position: 0 -873px;
+  }
+
+
+.active-hotspot {
+	 position: relative;
+	 width: 23px;
+	 height: 23px;
+	 border: none;
+	 //background-image:url($bg-url-elem);
+	
+	 background-image:url('../img/button.png');
+	
+}
+
+.inactive-hotspot {
+	  position: relative;
+	  width: 23px;
+	  height: 23px;
+	  border: none;
+	  background-image:url('../img/button_inactive.png');
+	 // background-image:url($bg-url-elem);
+}
+
+.copy-versatility {
+	@extend .abs-pos;
+	//background-image:url('../img/copy_versatility.png');
+	background-image:url($bg-url-full);
+	background-position: 0 -750px; 
+}
+.copy-touchscreen{
+	@extend .abs-pos;
+	//background-image:url('../img/copy_touchscreen.png');
+	background-image:url($bg-url-full);
+	background-position: 0 -500px;
+}
+
+.copy-battery{
+	@extend .abs-pos;
+	//background-image:url('../img/copy_battery.png');
+	background-image:url($bg-url-full);
+	background-position: 0 0;
+}
+
+
+
+.pulse-button {
+
+  position: relative;
+  width: 23px;
+  height: 23px;
+  border: none;
+  box-shadow: 0 0 0 0 rgba(0, 120, 215, 0.7);
+  border-radius: 50%;
+  background-color: #137ad4;
+  background-size:cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+.pulse-button:hover 
+{
+  -webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none;
+}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+
+
+
+
+
+#endframe {
+	@extend .abs-pos;
+	background-color:#eee;
+	cursor:pointer;
+
+	.copy-line {
+		@extend .abs-pos;
+		//background-image:url('../img/f8-copy1.png');
+		background-image:url($bg-url-full);
+		background-position: 0 -2500px; 
+	}
+	.product {
+		@extend .abs-pos;
+		//background-image:url('../img/product_yoga.png');
+		background-image:url($bg-url-full);
+		background-position: 0 -3500px;
+	}
+}
+
+
+
+
+
+
+/*
+.fullscreen-f4-copy2 {
+  background-position: 0 -1000px; }
+
+.fullscreen-f4-copy3 {
+  background-position: 0 -1250px; }
+
+.fullscreen-f4-copy4 {
+  background-position: 0 -1500px; }
+
+.fullscreen-f5-copy1 { *
+  background-position: 0 -1750px; }
+
+.fullscreen-f6-copy1 { *
+  background-position: 0 -2000px; }
+
+.fullscreen-f7-copy1 { *
+  background-position: 0 -2250px; }
+
+.fullscreen-f8-copy1 { *
+  background-position: 0 -2500px; }
+
+.fullscreen-product_laptop { *
+  background-position: 0 -2750px; }
+
+.fullscreen-product_tablet {
+  background-position: 0 -3000px; }
+
+.fullscreen-product_tent {
+  background-position: 0 -3250px; }
+
+.fullscreen-product_yoga {
+  background-position: 0 -3500px; }
+
+*/
